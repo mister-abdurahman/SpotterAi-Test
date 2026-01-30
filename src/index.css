@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-slate: #020617;
+  --color-brand-indigo: #0ea5e9; /* Sky Blue / Cyan-like for Teal highlights */
+  --color-brand-teal: #14b8a6;
+  --color-brand-dark-blue: #0f172a;
+  --color-brand-darker-blue: #020617;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-darker-blue text-slate-200 font-sans antialiased;
+  }
+
+  /* Hide native date icons */
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+  }
+
+  input[type="date"]::-webkit-inner-spin-button,
+  input[type="date"]::-webkit-clear-button {
+    display: none;
+    -webkit-appearance: none;
+  }
+}
+
+@layer components {
+  .sticky-header {
+    @apply sticky top-0 z-50 bg-brand-darker-blue/80 backdrop-blur-md border-b border-slate-800;
+  }
+  
+  .dark-card {
+    @apply bg-slate-900/50 border border-slate-800 rounded-2xl p-6 shadow-sm hover:border-brand-teal/30 transition-all;
+  }
+}
